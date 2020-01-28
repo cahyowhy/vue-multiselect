@@ -57,6 +57,7 @@
           :value="search"
           :disabled="disabled"
           :tabindex="tabindex"
+          v-validate="vValidate"
           @input="updateSearch($event.target.value)"
           @focus.prevent="activate()"
           @blur.prevent="deactivate()"
@@ -170,6 +171,15 @@ export default {
     name: {
       type: String,
       default: ''
+    },
+    /**
+     * vValidate props if contains
+     * @default ''
+     * @type {String}
+     */
+    vValidate: {
+      type: String,
+      default: null
     },
     /**
      * String to show when pointing to an option
